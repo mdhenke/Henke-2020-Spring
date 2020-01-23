@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         catBtn.setOnClickListener {
-            var string:String = editText.text.toString() + editText.text.toString()
+            var string:String = editText.text.toString() + editText2.text.toString()
             catBox.text = string
         }
     }
