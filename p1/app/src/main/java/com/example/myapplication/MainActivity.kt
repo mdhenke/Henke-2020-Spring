@@ -24,7 +24,11 @@ class MainActivity : AppCompatActivity() {
             else {
                 badLogin.visibility = View.VISIBLE
             }
-
+        }
+        
+        registerBtn.setOnClickListener {
+            val intent = Intent(this, Register::class.java)
+            startActivity(intent)
         }
     }
 }
