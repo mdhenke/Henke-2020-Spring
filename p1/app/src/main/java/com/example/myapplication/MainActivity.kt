@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -10,11 +11,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val user = UserModel("mdhenke@comcast.net", "password")
+        UserService.addUser(user)
 
-        activity2Btn.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra(SecondActivity.KEY_EXTRA, "new value")
-            startActivity(intent)
+        loginBtn.setOnClickListener {
+            val usr : UserModel? = UserService.loginUser(emailLoginField.text.toString(), passwordLoginField.text.toString())
+            if (usr != null) {
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra(HomeActivity.USER, usr.email)
+                startActivity(intent)
+            }
+            else {
+                badLogin.visibility = View.VISIBLE
+            }
+
         }
     }
 }
