@@ -1,7 +1,7 @@
-package com.example.myapplication
+package com.example.myapplication.services
 
 import ObjectBox
-import android.util.Log
+import com.example.myapplication.models.UserModel
 import io.objectbox.Box
 import io.objectbox.kotlin.query
 
@@ -10,7 +10,8 @@ object UserService {
     private var loggedInUser : UserModel? = null
 
     fun addUser(user: UserModel) : Boolean {
-        val userBox: Box<UserModel> = ObjectBox.boxStore.boxFor(UserModel::class.java)
+        val userBox: Box<UserModel> = ObjectBox.boxStore.boxFor(
+            UserModel::class.java)
         val query = userBox.query {  }
         val results = query.find()
         for (existingUser in results) {
@@ -23,7 +24,8 @@ object UserService {
     }
 
     fun loginUser(email: String, password: String): UserModel? {
-        val userBox: Box<UserModel> = ObjectBox.boxStore.boxFor(UserModel::class.java)
+        val userBox: Box<UserModel> = ObjectBox.boxStore.boxFor(
+            UserModel::class.java)
         val query = userBox.query {  }
         val results = query.find()
         for (user in results) {
@@ -39,7 +41,8 @@ object UserService {
     }
 
     fun existingUser(): String? {
-        val userBox: Box<UserModel> = ObjectBox.boxStore.boxFor(UserModel::class.java)
+        val userBox: Box<UserModel> = ObjectBox.boxStore.boxFor(
+            UserModel::class.java)
         val query = userBox.query {  }
         val results = query.find()
         if (results.size > 0) {
