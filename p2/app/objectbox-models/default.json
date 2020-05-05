@@ -1,0 +1,127 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:484540174223367018",
+      "lastPropertyId": "8:8414989019836042903",
+      "name": "Driver",
+      "properties": [
+        {
+          "id": "1:1893184797272977084",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6501740149141085419",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:822899333220227381",
+          "name": "stars",
+          "type": 5,
+          "flags": 2
+        },
+        {
+          "id": "4:4709622774966250523",
+          "name": "distance",
+          "type": 5,
+          "flags": 2
+        },
+        {
+          "id": "5:8308728395569135106",
+          "name": "rate",
+          "type": 5,
+          "flags": 2
+        },
+        {
+          "id": "6:1387154222466195885",
+          "name": "lat",
+          "type": 8,
+          "flags": 2
+        },
+        {
+          "id": "7:8592070987692540917",
+          "name": "imageUrl",
+          "type": 9
+        },
+        {
+          "id": "8:8414989019836042903",
+          "name": "currentRentalId",
+          "type": 6,
+          "flags": 2
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:4760575435948000958",
+      "lastPropertyId": "3:460190574747032402",
+      "name": "UserModel",
+      "properties": [
+        {
+          "id": "1:3336133708349577738",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6429043924186177121",
+          "name": "email",
+          "type": 9
+        },
+        {
+          "id": "3:460190574747032402",
+          "name": "password",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:8248874027767651359",
+      "lastPropertyId": "4:7964738047057406011",
+      "name": "RentalModel",
+      "properties": [
+        {
+          "id": "1:1846520686033418983",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8737029694196389525",
+          "name": "driver_id",
+          "type": 6,
+          "flags": 2
+        },
+        {
+          "id": "3:8885964726493783072",
+          "name": "activity",
+          "type": 9
+        },
+        {
+          "id": "4:7964738047057406011",
+          "name": "hours",
+          "type": 5,
+          "flags": 2
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "3:8248874027767651359",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

@@ -1,205 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
-
-    <LinearLayout
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        tools:context=".HomeActivity" >
+
+    </fragment>
+    <Button
+        android:id="@+id/view_drivers_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="View Available Drivers"
+        android:background="#018786"
+        android:textColor="#eeeeee"
+        android:padding="10dp"
+        android:paddingBottom="40dp"
+    />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/driver_on_the_way_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        android:layout_gravity="center">
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/driver_time_to_arrival"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:id="@+id/welcome"
-            android:textAlignment="center">
-        </TextView>
-        <androidx.cardview.widget.CardView
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"
-            android:background="#444444"
-            app:cardBackgroundColor="#CC6633"
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="3dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Google"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="#FFFFFF" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:text="Software Engineer Intern"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:text="San Francisco, CA"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Pay: "
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="$40/hr"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="#66CD00"
-                        android:textSize="16sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"
-            android:background="#444444"
-            app:cardBackgroundColor="#AA0000"
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="3dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Amazon"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="#FFFFFF" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:text="Data Science Intern"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:text="Seattle, WA"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Pay: "
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="$45/hr"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="#66CD00"
-                        android:textSize="16sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"
-            android:background="#444444"
-            app:cardBackgroundColor="#45748D"
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="3dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Microsoft"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="#FFFFFF" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:text="Backend Software Engineer Intern"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:text="Redmond, WA"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Pay: "
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="$7600/mo"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="#66CD00"
-                        android:textSize="16sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="15dp"/>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

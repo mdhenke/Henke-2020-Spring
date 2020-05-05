@@ -7,16 +7,28 @@
     tools:context=".Register">
 
     <TextView
-        android:id="@+id/badLogin2"
+        android:id="@+id/badRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="A user with this email already exists"
+        android:text="A user with this email already exists."
         android:textColor="#B80F0A"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegister" />
+
+    <TextView
+        android:id="@+id/noPasswordMatchText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Your passwords did not match."
+        android:textColor="#B80F0A"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegister" />
 
     <Button
         android:id="@+id/registerBtn2"
@@ -27,31 +39,66 @@
         android:text="Register"
         android:textColor="#AFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toEndOf="@id/back_to_login_button"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegister" />
+    <Button
+        android:id="@+id/back_to_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="5dp"
+        android:text="Back"
+        app:layout_constraintEnd_toStartOf="@+id/registerBtn2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordRegister"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
 
     <EditText
         android:id="@+id/emailRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="228dp"
         android:ems="10"
-        android:hint="Boise State Email"
+        android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/register_image_view" />
 
     <EditText
         android:id="@+id/passwordRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailRegister" />
+
+    <EditText
+        android:id="@+id/confirmPasswordRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegister" />
+
+    <ImageView
+        android:id="@+id/register_image_view"
+        android:layout_width="259dp"
+        android:layout_height="287dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/med_blue"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="-49dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

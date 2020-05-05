@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Project 1</string>
+    <string name="app_name">BoatUber</string>
+    <string name="title_activity_home">Map</string>
+    <string name="permission_required_toast">GPS Permission is required to access the map.</string>
+    <string name="permission_rationale_location">Allow Map to access your location?</string>
+    <string name="location_permission_denied">Permission to access your location was denied.</string>
+    <string-array name="activities_array">
+        <item>Wakeboarding</item>
+        <item>Waterskiing</item>
+        <item>Inner-Tubing</item>
+    </string-array>
 </resources>
