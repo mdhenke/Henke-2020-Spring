@@ -35,6 +35,7 @@ class Register : AppCompatActivity() {
                     finish()
                 } else {
                     passwordRegister.setText("")
+                    confirmPasswordRegister.setText("")
                     badRegister.visibility = View.VISIBLE
                     noPasswordMatchText.visibility = View.GONE
                 }

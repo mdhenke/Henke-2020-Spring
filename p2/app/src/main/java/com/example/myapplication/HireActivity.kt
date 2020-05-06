@@ -28,11 +28,11 @@ class HireActivity : AppCompatActivity() {
             d = driver
         }
 
-        driver_name_text_view.text = d?.name
+        driver_name_text_view.text = d.name
         val rateText = "\$${d.rate}/hr"
         driver_rate_text_view.text = rateText
 
-        Picasso.get().load(d?.imageUrl).into(driver_image_hire_view)
+        Picasso.get().load(d.imageUrl).into(driver_image_hire_view)
         setListeners()
         setSpinner()
     }

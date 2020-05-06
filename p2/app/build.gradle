@@ -24,8 +24,19 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "EXPRESS_SERVER", "\"http://marcushenke.com\"") //This is not actually deployed
+            resValue ("string", "GOOGLE_MAP_KEY", "\"AIzaSyAZJm5sxVHVBV5WBi8V-RaJF8NnfkboXPg\"")
+        }
+        staging {
+            buildConfigField("String", "EXPRESS_SERVER", "\"http://10.0.2.2:3000\"")
+            resValue ("string", "GOOGLE_MAP_KEY", "\"AIzaSyAZJm5sxVHVBV5WBi8V-RaJF8NnfkboXPg\"")
+        }
+        debug {
+            buildConfigField("String", "EXPRESS_SERVER", "\"http://10.0.2.2:3000\"")
+            resValue ("string", "GOOGLE_MAP_KEY", "\"AIzaSyAZJm5sxVHVBV5WBi8V-RaJF8NnfkboXPg\"")
         }
     }
 }

@@ -38,7 +38,7 @@ object PlaceService {
             } else {
                 val exception = task.exception
                 if (exception is ApiException) {
-                    val apiException = exception as ApiException
+                    val apiException = exception
                     Log.e(
                         "places_error",
                         "Place not found: " + apiException.statusCode
@@ -47,7 +47,7 @@ object PlaceService {
             }
         }
         //While google places API is not working...
-        setFun("Barclay Bay")
+       setFun("Barclay Bay")
 
     }
 

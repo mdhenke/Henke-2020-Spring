@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == REGISTER) {
             if (resultCode == Activity.RESULT_OK && data?.getStringExtra(STATUS) == "LOGIN") {
                 goodRegister.visibility = View.VISIBLE
-                var s : String? = data?.getStringExtra(EMAIL)
+                var s : String? = data.getStringExtra(EMAIL)
                 if (s != null) {
                     emailLoginField.setText(s)
                 }
